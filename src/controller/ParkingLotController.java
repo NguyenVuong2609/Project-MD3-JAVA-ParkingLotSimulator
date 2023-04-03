@@ -21,20 +21,17 @@ public class ParkingLotController {
         parkingLotServiceIMPL.deleteById(id);
     }
 
-    public boolean fillParkingLot(int seats) {
-        int filledSize = getParkingLotList().get(0).getFilledSize();
-        filledSize += seats >= 16 ? 2 : 1;
-        if (getParkingLotList().get(0).getSize() >= filledSize) {
-            getParkingLotList().get(0).setFilledSize(filledSize);
-            return true;
-        }
-        return false;
+    public boolean isParkingLotFull(int seats) {
+        return parkingLotServiceIMPL.isParkingLotFull(seats);
+    }
+    public void releaseParkingLot(int seats){
+        parkingLotServiceIMPL.releaseParkingLot(seats);
     }
 
     public void changeFee(double fee){
-        getParkingLotList().get(0).setFee(fee);
+        parkingLotServiceIMPL.changeFee(fee);
     }
     public void changeSize(int size){
-        getParkingLotList().get(0).setSize(size);
+        parkingLotServiceIMPL.changeSize(size);
     }
 }

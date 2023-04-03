@@ -7,8 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class ParkingLotServiceIMPL implements IParkingLotService{
-    List<ParkingLot> parkingLots = new Config<ParkingLot>().readFromFile(Config.PATH_PARKINGLOTINFO);
+public class ParkingLotServiceIMPL implements IParkingLotService {
+    List<ParkingLot> parkingLots = new Config<ParkingLot>().readFromFile(Config.PATH_PARKING_LOT_INFO);
+
     @Override
     public List<ParkingLot> findAll() {
         return parkingLots;
@@ -20,9 +21,9 @@ public class ParkingLotServiceIMPL implements IParkingLotService{
             parkingLots.add(parkingLot);
         } else {
             int index = parkingLots.indexOf(findById(parkingLot.getId()));
-            parkingLots.set(index,parkingLot);
+            parkingLots.set(index, parkingLot);
         }
-        new Config<ParkingLot>().writeToFile(Config.PATH_PARKINGLOTINFO, parkingLots);
+        new Config<ParkingLot>().writeToFile(Config.PATH_PARKING_LOT_INFO, parkingLots);
     }
 
     @Override
@@ -39,27 +40,38 @@ public class ParkingLotServiceIMPL implements IParkingLotService{
     public void deleteById(int id) {
         int index = parkingLots.indexOf(findById(id));
         parkingLots.remove(index);
-        new Config<ParkingLot>().writeToFile(Config.PATH_PARKINGLOTINFO, parkingLots);
+        new Config<ParkingLot>().writeToFile(Config.PATH_PARKING_LOT_INFO, parkingLots);
     }
 
-    public boolean fillParkingLot(int seats){
+    public boolean isParkingLotFull(int seats) {
         int filledSize = parkingLots.get(0).getFilledSize();
         filledSize += seats >= 16 ? 2 : 1;
-        if (parkingLots.get(0).getSize() >= filledSize){
+        if (parkingLots.get(0).getSize() >= filledSize) {
             parkingLots.get(0).setFilledSize(filledSize);
+            new Config<ParkingLot>().writeToFile(Config.PATH_PARKING_LOT_INFO, parkingLots);
             return true;
         }
         return false;
     }
 
-    public void changeFee(double fee){
-        parkingLots.get(0).setFee(fee);
-    }
-    public void changeSize(int size){
-        parkingLots.get(0).setSize(size);
+    public void releaseParkingLot(int seats) {
+        int filledSize = parkingLots.get(0).getFilledSize();
+        filledSize -= seats >= 16 ? 2 : 1;
+        parkingLots.get(0).setFilledSize(filledSize);
+        new Config<ParkingLot>().writeToFile(Config.PATH_PARKING_LOT_INFO, parkingLots);
     }
 
-    public int calTotalFee(){
+    public void changeFee(double fee) {
+        parkingLots.get(0).setFee(fee);
+        new Config<ParkingLot>().writeToFile(Config.PATH_PARKING_LOT_INFO, parkingLots);
+    }
+
+    public void changeSize(int size) {
+        parkingLots.get(0).setSize(size);
+        new Config<ParkingLot>().writeToFile(Config.PATH_PARKING_LOT_INFO, parkingLots);
+    }
+
+    public int calTotalFee() {
         try {
             Date startTime = Calendar.getInstance().getTime();
             Thread.sleep(10000);

@@ -68,6 +68,12 @@ public class CarServiceIMPL implements ICarService{
         new Config<Car>().writeToFile(Config.PATH_CAR, carList);
     }
 
+    public void deleteByTicket(String ticket){
+        int index = carList.indexOf(findByTicket(ticket));
+        carList.remove(index);
+        new Config<Car>().writeToFile(Config.PATH_CAR, carList);
+    }
+
     public Date getStartTimeByLicensePlates(String plate){
         for (int i = 0; i < carList.size(); i++) {
             if (carList.get(i).getLicensePlates().equalsIgnoreCase(plate)) {
@@ -87,4 +93,5 @@ public class CarServiceIMPL implements ICarService{
     public Date getLocalTime(){
         return Calendar.getInstance().getTime();
     }
+
 }

@@ -19,6 +19,9 @@ public class CarController {
     public void removeCarByLicensePlates(String licensePlates) {
         carService.deleteByLicensePlates(licensePlates);
     }
+    public void removeCarByTicket(String ticket){
+        carService.deleteByTicket(ticket);
+    }
     public Car findByLicensePlates(String licensePlates){
         return carService.findByLicensePlates(licensePlates);
     }

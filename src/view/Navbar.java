@@ -2,10 +2,7 @@ package view;
 
 import config.Config;
 import controller.ParkingLotController;
-import controller.UserController;
 import model.ParkingLot;
-import model.User;
-
 
 public class Navbar {
     public Navbar(int status) {
@@ -17,7 +14,8 @@ public class Navbar {
             System.out.printf("|" + "  4. %-91s" + "|\n", "Find and calculate the fee by car ticket");
             System.out.printf("|" + "  5. %-91s" + "|\n", "Show Parking Lot info");
             System.out.printf("|" + "  6. %-91s" + "|\n", "Change the fee");
-            System.out.printf("|" + "  7. %-91s" + "|\n", "Log out");
+            System.out.printf("|" + "  7. %-91s" + "|\n", "Change the Parking Lot size");
+            System.out.printf("|" + "  8. %-91s" + "|\n", "Log out");
             System.out.println("❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀ Car Parking Menu ❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀" + Config.RESET);
             System.out.println("Please enter your choice: ");
             int choice = Config.validateInt();
@@ -26,7 +24,7 @@ public class Navbar {
                     new CarView().addCar(status);
                     break;
                 case 2:
-
+                    new CarView().removeCar(status);
                     break;
                 case 3:
                     new CarView().showCarList(status);
@@ -38,8 +36,12 @@ public class Navbar {
                     new ParkingLotView().showParkingLot(status);
                     break;
                 case 6:
+                    new ParkingLotView().changeFee(status);
                     break;
                 case 7:
+                    new ParkingLotView().changeSize(status);
+                    break;
+                case 8:
                     new LoginRegisterView();
             }
         } else if (status == 1){
@@ -57,7 +59,7 @@ public class Navbar {
                     new CarView().addCar(status);
                     break;
                 case 2:
-
+                    new CarView().removeCar(status);
                     break;
                 case 3:
                     new CarView().showCarList(status);
@@ -75,7 +77,7 @@ public class Navbar {
 
     public static void main(String[] args) {
 //        new UserController().addUser(new User(0,"admin","admin",true,true));
-        new ParkingLotController().addParkingLot(new ParkingLot(0,200,20000));
+//        new ParkingLotController().addParkingLot(new ParkingLot(0,200,20000));
         new LoginRegisterView();
     }
 }

@@ -5,11 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc5fa8eb-bb4c-44c2-90b7-6eda11c06e9d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ParkingLotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ParkingLotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/CarList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/CarList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/PakingLotInfo.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/ParkingLot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ParkingLot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/CarService/CarServiceIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/CarService/CarServiceIMPL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/ParkingLotService/ParkingLotServiceIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/ParkingLotService/ParkingLotServiceIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/UserService/UserServiceIMPL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/UserService/UserServiceIMPL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/CarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/CarView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Navbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Navbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ParkingLotView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ParkingLotView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +93,10 @@
       <workItem from="1680159123753" duration="11654000" />
       <workItem from="1680246529195" duration="327000" />
       <workItem from="1680438601853" duration="9380000" />
-      <workItem from="1680483756634" duration="27784000" />
+      <workItem from="1680483756634" duration="28130000" />
+      <workItem from="1680528533229" duration="1735000" />
+      <workItem from="1680530306277" duration="535000" />
+      <workItem from="1680530862427" duration="3682000" />
     </task>
     <servers />
   </component>

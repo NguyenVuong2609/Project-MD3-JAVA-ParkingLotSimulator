@@ -74,7 +74,6 @@ public class ParkingLot implements Serializable {
                 ", size=" + size +
                 ", filledSize=" + filledSize +
                 ", fee=" + fee +
-                ", carList=" + carList +
                 '}';
     }
 }

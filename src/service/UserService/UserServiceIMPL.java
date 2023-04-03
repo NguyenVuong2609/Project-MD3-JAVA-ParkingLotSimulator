@@ -38,7 +38,7 @@ public class UserServiceIMPL implements IUserService {
     public void deleteById(int id) {
         int index = userList.indexOf(findById(id));
         userList.remove(index);
-        new Config<User>().writeToFile(Config.PATH_PARKINGLOTINFO, userList);
+        new Config<User>().writeToFile(Config.PATH_PARKING_LOT_INFO, userList);
     }
 
     public User checkLogin(String userName, String password) {
