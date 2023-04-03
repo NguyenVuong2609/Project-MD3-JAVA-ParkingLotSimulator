@@ -52,6 +52,13 @@ public class ParkingLotServiceIMPL implements IParkingLotService{
         return false;
     }
 
+    public void changeFee(double fee){
+        parkingLots.get(0).setFee(fee);
+    }
+    public void changeSize(int size){
+        parkingLots.get(0).setSize(size);
+    }
+
     public int calTotalFee(){
         try {
             Date startTime = Calendar.getInstance().getTime();

@@ -11,7 +11,10 @@ public class ParkingLot implements Serializable {
     private double fee;
     private List<Car> carList = new ArrayList<>();
 
-    public ParkingLot() {
+    public ParkingLot(int id, int size, double fee) {
+        this.id = id;
+        this.size = size;
+        this.fee = fee;
     }
 
     public int getId() {
