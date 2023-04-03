@@ -1,7 +1,6 @@
 package service.ParkingLotService;
 
 import config.Config;
-import model.Car;
 import model.ParkingLot;
 
 import java.util.Calendar;

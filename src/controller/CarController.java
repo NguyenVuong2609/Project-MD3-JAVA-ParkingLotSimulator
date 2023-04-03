@@ -23,7 +23,7 @@ public class CarController {
         return carService.findByLicensePlates(licensePlates);
     }
     public long calDifferenceTimeByTicket(String ticket){
-        return (carService.getLocalTime().getTime() - carService.getStartTimeByTicket(ticket).getTime()) / (60 * 1000) % 60;
+        return (carService.getLocalTime().getTime() - carService.getStartTimeByTicket(ticket).getTime());
     }
     public Car findCarByTicket(String ticket){
         return carService.findByTicket(ticket);

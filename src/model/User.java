@@ -1,13 +1,15 @@
 package model;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private int userId;
     private String userName;
     private String password;
     private boolean status;
-    private String permission;
+    private boolean permission;
 
-    public User(int userId, String userName, String password, boolean status, String permission) {
+    public User(int userId, String userName, String password, boolean status, boolean permission) {
         this.userId = userId;
         this.userName = userName;
         this.password = password;
@@ -47,11 +49,11 @@ public class User {
         this.status = status;
     }
 
-    public String getPermission() {
+    public boolean isPermission() {
         return permission;
     }
 
-    public void setPermission(String permission) {
+    public void setPermission(boolean permission) {
         this.permission = permission;
     }
 

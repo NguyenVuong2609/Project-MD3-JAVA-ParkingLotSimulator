@@ -1,6 +1,7 @@
 package config;
 
-import model.ParkingLot;
+
+import view.Navbar;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -17,6 +18,8 @@ public class Config<T> {
     public static final String RESET = "\033[0m";  // Text Reset
     public static final String QUIT_BACK_MENU = "Enter any key to quit or BACK to return Menu";
     public static final String CONTINUE_BACK_MENU = "Enter any key to continue or BACK to return Menu";
+    public static final String NOTIFY_FAIL_LOGIN = "Account does not exist or Wrong password!";
+
 
     public static Scanner scanner() {
         Scanner sc = new Scanner(System.in);
@@ -29,7 +32,7 @@ public class Config<T> {
             try {
                 data = Integer.parseInt(scanner().nextLine());
                 return data;
-            } catch (InputMismatchException e) {
+            } catch (Exception e) {
                 System.err.println("Format is incorrect");
             }
         }
@@ -41,7 +44,7 @@ public class Config<T> {
             try {
                 data = Double.parseDouble(scanner().nextLine());
                 return data;
-            } catch (InputMismatchException e) {
+            } catch (Exception e) {
                 System.err.println("Format is incorrect");
             }
         }
@@ -50,6 +53,11 @@ public class Config<T> {
     public static boolean validateLicensePlates(String data){
         final String LICENSE_PLATES_REGEX = "\\d{2}[A-Z]-\\d{4,5}";
         return Pattern.matches(LICENSE_PLATES_REGEX, data);
+    }
+
+    public static boolean validatePassword(String data){
+        final String PASSWORD_REGEX = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,12}$";
+        return Pattern.matches(PASSWORD_REGEX,data);
     }
 
     //! Đọc file

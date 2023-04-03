@@ -1,10 +1,8 @@
 package service.UserService;
 
 import config.Config;
-import model.ParkingLot;
 import model.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public class UserServiceIMPL implements IUserService {
@@ -43,11 +41,18 @@ public class UserServiceIMPL implements IUserService {
         new Config<User>().writeToFile(Config.PATH_PARKINGLOTINFO, userList);
     }
 
-    public boolean loginCheck(String userName, String password) {
+    public User checkLogin(String userName, String password) {
         for (User user : userList) {
             if (user.getUserName().equals(userName) && user.getPassword().equals(password)) {
-                return true;
+                return user;
             }
+        }
+        return null;
+    }
+    public boolean validateUsername(String username){
+        for (User user : userList){
+            if (user.getUserName().equals(username))
+                return true;
         }
         return false;
     }

@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParkingLot {
+public class ParkingLot implements Serializable {
     public int id;
     private int size;
     private int filledSize;
