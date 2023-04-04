@@ -7,6 +7,7 @@ import java.util.Date;
 public class Car implements Serializable {
     private int id;
     private String brand;
+    private String carName;
     private int seats;
     private String color;
     private String licensePlates;
@@ -15,7 +16,7 @@ public class Car implements Serializable {
     Date endTime;
     long difference;
 
-    public Car(int id, String brand, int seats, String color, String licensePlates, Date startTime, String ticket) {
+    public Car(int id, String brand, int seats, String color, String licensePlates, Date startTime, String ticket, String carName) {
         this.id = id;
         this.brand = brand;
         this.seats = seats;
@@ -23,6 +24,7 @@ public class Car implements Serializable {
         this.licensePlates = licensePlates;
         this.ticket = ticket;
         this.startTime = startTime;
+        this.carName = carName;
     }
 
     public int getId() {
@@ -39,6 +41,14 @@ public class Car implements Serializable {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getCarName() {
+        return carName;
+    }
+
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
 
     public int getSeats() {

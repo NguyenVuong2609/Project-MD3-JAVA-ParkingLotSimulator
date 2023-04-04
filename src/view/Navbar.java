@@ -15,7 +15,8 @@ public class Navbar {
             System.out.printf("|" + "  5. %-91s" + "|\n", "Show Parking Lot info");
             System.out.printf("|" + "  6. %-91s" + "|\n", "Change the fee");
             System.out.printf("|" + "  7. %-91s" + "|\n", "Change the Parking Lot size");
-            System.out.printf("|" + "  8. %-91s" + "|\n", "Log out");
+            System.out.printf("|" + "  8. %-91s" + "|\n", "Show the list of user");
+            System.out.printf("|" + "  9. %-91s" + "|\n", "Log out");
             System.out.println("❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀ Car Parking Menu ❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀" + Config.RESET);
             System.out.println("Please enter your choice: ");
             int choice = Config.validateInt();
@@ -42,7 +43,11 @@ public class Navbar {
                     new ParkingLotView().changeSize(status);
                     break;
                 case 8:
+                    new UserView().showUserList(status);
+                    break;
+                case 9:
                     new LoginRegisterView();
+                    break;
             }
         } else if (status == 1){
             System.out.println(Config.WHITE_BRIGHT + "❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀ Car Parking Menu ❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀❀");
@@ -69,6 +74,7 @@ public class Navbar {
                     break;
                 case 5:
                     new LoginRegisterView();
+                    break;
             }
         }
     }

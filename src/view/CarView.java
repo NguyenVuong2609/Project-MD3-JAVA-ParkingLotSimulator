@@ -43,6 +43,8 @@ public class CarView {
                 }
                 System.out.println("Enter the brand: ");
                 String brand = Config.scanner().nextLine();
+                System.out.println("Enter the name of car: ");
+                String carName = Config.scanner().nextLine();
                 int seats;
                 do {
                     System.out.println("Enter the seats: ");
@@ -62,7 +64,7 @@ public class CarView {
                 Date startTime = Calendar.getInstance().getTime();
                 String ticket = LocalDate.now().toString() + id;
                 if (parkingLotController.isParkingLotFull(seats)) {
-                    Car car = new Car(id, brand, seats, color, licensePlates, startTime, ticket);
+                    Car car = new Car(id, brand, seats, color, licensePlates, startTime, ticket, carName);
                     carController.addCar(car);
                     System.out.println(Config.NOTIFY_SUCCESS);
                 } else {
